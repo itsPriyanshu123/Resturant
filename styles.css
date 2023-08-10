@@ -1,0 +1,46 @@
+.logo{
+    height:80px !important;
+    width:120px !important;
+
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list_items{
+    display: flex;
+}
+li{
+    margin-left:22px;
+    list-style-type: none;
+    padding-top: 10px;
+}
+.card{
+    width:250px;
+    height:350px;
+    background-color: beige;
+    margin: 5px;
+}
+.card:hover{
+    scale: 0.9; 
+    cursor: pointer;
+}
+.card_content{
+    padding-left: 15px;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap:wrap;
+ 
+}
+.search{
+    padding:20px
+}
+.image_class{
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+

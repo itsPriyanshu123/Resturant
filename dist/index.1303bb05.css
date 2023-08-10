@@ -1,0 +1,52 @@
+.logo {
+  width: 120px !important;
+  height: 80px !important;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+}
+
+.list_items {
+  display: flex;
+}
+
+li {
+  margin-left: 22px;
+  padding-top: 10px;
+  list-style-type: none;
+}
+
+.card {
+  background-color: beige;
+  width: 250px;
+  height: 350px;
+  margin: 5px;
+}
+
+.card:hover {
+  cursor: pointer;
+  scale: .9;
+}
+
+.card_content {
+  padding-left: 15px;
+}
+
+.res-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.search {
+  padding: 20px;
+}
+
+.image_class {
+  border-radius: 25px;
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=index.1303bb05.css.map */
