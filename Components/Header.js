@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logoImage from "/common/logo.jpg";
 // Title component for display logo
 const Title = () => (
@@ -8,11 +9,13 @@ const Title = () => (
 
 // Header component for header section: Logo, Nav Items
 const Header = () => {
+  const[auth,setAuth]=useState("login");
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
         <ul>
+          <button type='submit' onClick={()=>setAuth(auth==="login"?"logout":"login")}>{auth}</button>
           <li>Home</li>
           <li>About</li>
           <li>Contact</li>
