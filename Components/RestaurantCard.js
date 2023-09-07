@@ -13,7 +13,7 @@ const RestaurantCard = ({
       <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
              cloudinaryImageId} />
       <h2>{name}</h2>
-      <h5>{ cuisines.join(" , ")}</h5>
+      {/* <h5>{ cuisines.join(" , ")}</h5>/ */}
       <h6>{areaName}</h6>
       <span>
         <h4

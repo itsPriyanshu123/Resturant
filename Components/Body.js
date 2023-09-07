@@ -1,62 +1,65 @@
-// import { RestaurantList } from "../Utills";
-import restaurantList from "../Utills/RestaurantList";
+import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
-import CircularProgress from "@mui/material/CircularProgress";
-import { Box } from "@mui/material";
 
 function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
+  const resFilterData = restaurants.filter((restaurant) =>
+    restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
   );
-  return filterData;
+  return resFilterData;
 }
 
-// Body Component for body section: It contain all restaurant cards
-// We are mapping restaurantList array and passing JSON data to RestaurantCard component as props with unique key as index
 const Body = () => {
-  // useState: To create a state variable, searchText is local state variable
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState([]);
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [clearSearch, setClearSearch] = useState(false);
 
   useEffect(() => {
     getRestaurants();
   }, []);
 
+  useEffect(() => {
+    // Update filteredRestaurants whenever searchText changes
+    searchData(searchText, allRestaurants);
+  }, [searchText, allRestaurants]);
+
   async function getRestaurants() {
-    // handle the error using try... catch
     try {
-      const response = await fetch(
-        " "
-      );
+      const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.3176452&lng=82.9739144&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const json = await response.json();
 
-      // initialize checkJsonData() function to check Swiggy Restaurant data
       async function checkJsonData(jsonData) {
         for (let i = 0; i < jsonData?.data?.cards.length; i++) {
-          // initialize checkData for Swiggy Restaurant data
-          let checkData =
-            json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants;
-
-          // if checkData is not undefined then return it
+          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
           if (checkData !== undefined) {
             return checkData;
           }
         }
       }
 
-      // call the checkJsonData() function which return Swiggy Restaurant data
       const resData = await checkJsonData(json);
 
-      // update the state variable restaurants with Swiggy API data
-      setRestaurants(resData);
+      setAllRestaurants(resData);
       setFilteredRestaurants(resData);
     } catch (error) {
       console.log(error);
     }
   }
+
+  const searchData = (searchText, restaurants) => {
+    if (searchText !== "") {
+      const filteredData = filterData(searchText, restaurants);
+      setFilteredRestaurants(filteredData);
+      setErrorMessage(filteredData.length === 0 ? "No matches restaurant found" : "");
+    } else {
+      setErrorMessage("");
+      setFilteredRestaurants(restaurants);
+    }
+  };
+
+  if (!allRestaurants) return null;
 
   return (
     <>
@@ -71,27 +74,25 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
-            // filter the data
-            const data = filterData(searchText, restaurants);
-            // update the state of restaurants list
-            setRestaurants(data);
+            if (searchText.trim() === "") {
+              setClearSearch(true);
+            } else {
+              setClearSearch(false);
+            }
+            // No need to call searchData here, it's already updated through useEffect
           }}
         >
           Search
         </button>
       </div>
-      {restaurants?.length === 0 ? (
+      {errorMessage && <div className="error-container">{errorMessage}</div>}
+      {allRestaurants?.length === 0 ? (
         <Shimmer />
       ) : (
         <div className="restaurant-list">
-          {restaurants.map((restaurant) => {
-            return (
-              <RestaurantCard
-                key={restaurant?.info?.id}
-                {...restaurant?.info}
-              />
-            );
-          })}
+          {filteredRestaurants.map((restaurant) => (
+            <RestaurantCard key={restaurant?.info?.id} {...restaurant?.info} />
+          ))}
         </div>
       )}
     </>
