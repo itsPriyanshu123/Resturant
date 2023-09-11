@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logoImage from "/common/logo.jpg";
+import { Link } from "react-router-dom";
 // Title component for display logo
 const Title = () => (
   <a href="/">
@@ -16,9 +17,15 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <button type='submit' onClick={()=>setAuth(auth==="login"?"logout":"login")}>{auth}</button>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+         <li>
+          <Link to="/about">About US</Link>
+         </li>
+        <li>
+          <Link to="/contact">Contact us</Link>
+        </li>
           <li>
             <i className="fa-solid fa-cart-shopping"></i>
           </li>

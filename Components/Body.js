@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-
+import { Restaurant_list_api } from "./constant";
 function filterData(searchText, restaurants) {
   const resFilterData = restaurants.filter((restaurant) =>
     restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
@@ -15,15 +15,45 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [clearSearch, setClearSearch] = useState(false);
+  const [resList,setResList] = useState([]);
 
   useEffect(() => {
     getRestaurants();
   }, []);
 
+  useEffect(()=>{
+    getRestaurant_list();
+  },[])
+
   useEffect(() => {
     // Update filteredRestaurants whenever searchText changes
     searchData(searchText, allRestaurants);
   }, [searchText, allRestaurants]);
+
+async function getRestaurant_list(){
+try{
+  const response =await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=25.3176452&lng=82.9739144&restaurantId=190999&catalog_qa=undefined&submitAction=ENTER")
+  const jsonData=await response.json();
+  const result=jsonData?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
+
+  console.log("res", result);
+
+    async function checkRestaurantList(responseData){
+      for(let i=0;i<responseData?.data?.cards.length;i++){
+        const result = jsonData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemsCards;
+        if(result!==undefined){
+          return result;
+        }
+      }
+    }
+
+    const actual_data= await checkRestaurantList(jsonData);
+
+    setResList(actual_data);
+}catch(error){
+  console.log(error);
+}
+}
 
   async function getRestaurants() {
     try {

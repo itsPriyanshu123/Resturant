@@ -1,15 +1,13 @@
 
 import Header from "./Components/Header";
-// import RestaurantCard from "./Components/RestaurantCard";
-// import Dishlogo from "./common/foodDish1.jpg";
-
-// import restaurantList from "./Utills/RestaurantList";
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./Components/Body";
-
-
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import Error from "./Components/Error";
 /* My Food App structure will look like this, 
             1) Header
                 - Logo
@@ -33,11 +31,32 @@ const AppLayout = () => {
   return (
     <React.Fragment>
       <Header />
-      <Body />
+      <Outlet />
       {/* <Footer /> */}
     </React.Fragment>
   );
 };
+const router =createBrowserRouter([
+  {
+    path: "/",
+    element:<AppLayout />,
+    children:[
+      {
+        path: "/",
+        element:<Body />,
+      },
+      {
+        path: "/about",
+        element:<About />,
+      },
+      {
+        path: "/contact",
+        element:<Contact/>,
+      }
+    ],
+    errorElement:<Error />
+  }
 
+])
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={router}/>);
