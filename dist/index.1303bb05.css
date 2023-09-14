@@ -6,7 +6,7 @@
 }
 
 :root {
-  --header-bg-color: #01a390;
+  --header-bg-color: #fff;
   --footer-bg-color: #01a390;
   --text-color: #000;
   --light-green: #00ad1d;
@@ -139,7 +139,8 @@
 
 .card > img {
   border-radius: 10px;
-  width: 100%;
+  width: 220px;
+  height: 140px;
 }
 
 .card > h5 {

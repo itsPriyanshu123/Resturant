@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { Restaurant_list_api } from "./constant";
+
 function filterData(searchText, restaurants) {
   const resFilterData = restaurants.filter((restaurant) =>
     restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())

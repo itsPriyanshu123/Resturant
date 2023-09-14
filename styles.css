@@ -8,7 +8,7 @@
 
 /* create global variable with :root selector */
 :root {
-  --header-bg-color: rgb(1, 163, 144);
+  --header-bg-color: #fff;
   --footer-bg-color: rgb(1, 163, 144);
   --text-color: #000;
   --light-green: #00ad1d;
@@ -148,7 +148,8 @@
 }
 
 .card > img {
-  width: 100%;
+  width: 220px;
+  height: 140px;
   border-radius: 10px;
 }
 
