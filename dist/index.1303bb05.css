@@ -258,6 +258,25 @@
   color: #cb3600;
 }
 
+.menu_card {
+  justify-content: space-;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.menu_img {
+  justify-content: flex-end;
+  width: 120px;
+  height: 60px;
+  display: flex;
+}
+
+.image_div {
+  padding-right: 120px;
+}
+
 @media only screen and (width <= 470px) {
   .header {
     height: 60px;

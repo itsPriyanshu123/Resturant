@@ -265,6 +265,26 @@
   color: rgb(203, 54, 0);
 }
 
+/* ========================css for menu list ============== */
+.menu_card{
+  display: flex;
+  width:70%;
+  justify-content: space-;
+  align-items: center;
+  margin: 0 auto;
+  
+}
+.menu_img{
+  height:60px;
+  width:120px;
+  display: flex;
+justify-content: flex-end;
+}
+
+.image_div{
+  padding-right: 120px;
+}
+
 /* CSS for mobile devices */
 @media only screen and (max-width: 470px) {
   .header {
