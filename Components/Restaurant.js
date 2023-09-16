@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import Menu from "./Menu";
+import Face from "./Face";
 const Restaurant = () => {
   // ================== state ======================
   const [resInfo, setResInfo] = useState(null);
@@ -20,7 +21,7 @@ const Restaurant = () => {
     const json = await data.json();
 
     setResInfo(json?.data);
-    console.log(resInfo)
+    console.log("data",resInfo)
   };
   if (resInfo === null || resInfo === undefined) {
     return (
@@ -30,20 +31,18 @@ const Restaurant = () => {
     );
   }
 
-  const { name, locality, costForTwoMessage, cuisines  } = resInfo?.cards[0]?.card?.card?.info;
+  const { name, locality, costForTwoMessage, cuisines,avgRatingString,sla,cloudinaryImageId  } = resInfo?.cards[0]?.card?.card?.info;
   const{itemCards}=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  console.log("info",itemCards);
+  // console.log("info",itemCards);
   return (
-    <div style={{ marginTop: "80px" }}>
-      <h1>{name}</h1>
-      <h3>{locality} - {costForTwoMessage} </h3>
-      <p>{cuisines?.join(", ")}</p>
+    <div className="list_div">
+      <Face name={name} locality={locality} costForTwoMessage={costForTwoMessage} cuisines={cuisines} avgRatingString={avgRatingString} sla={sla.minDeliveryTime} cloudinaryImageId={cloudinaryImageId}/>
       {
         itemCards.map((item)=>{
-        return(<div>
+        return(
         
           <Menu key={item.card.info.id} name={item.card.info.name}  image={item.card.info.imageId} description={item.card.info.description}  price={item.card.info.price}/>
-        </div>)
+        )
         })
       }
      
