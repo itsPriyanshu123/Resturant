@@ -324,10 +324,9 @@ width: 100%;
 }
 .main_div{
   display: flex;
-  flex-direction: row;
-  width:70%;
-  justify-content: space-between;
-  align-items: center;
+flex-direction: row;
+justify-content: center;
+align-items: center;
 }
 .image_size{
   height:139px;
@@ -336,6 +335,42 @@ width: 100%;
 .image_section{
   padding-right: 30px;
 }
+.text_section{
+  justify-content: flex-end;
+  color: red;
+}
+
+/* experimental */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px; /* Set a fixed width for each card */
+  height: 150px; /* Set a fixed height for each card */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px auto; /* Center the cards horizontally */
+  overflow: hidden; /* Hide any content overflow */
+}
+
+.image-size {
+ 
+
+  border-radius: 10px;
+  max-height: 250px;
+  max-width: 150px; /* Limit the image width */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+.text-section {
+  flex-grow: 1;
+
+  padding-left: 20px; /* Add some spacing between the text and image */
+}
+
+
 
 /* CSS for mobile devices */
 @media only screen and (max-width: 470px) {

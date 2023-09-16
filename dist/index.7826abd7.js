@@ -34069,7 +34069,7 @@ $RefreshReg$(_c, "Restaurant");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Shimmer":"eUWz6","react-router-dom":"9xmpe","./Menu":"dzl1W","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Face":"djofN"}],"dzl1W":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Shimmer":"eUWz6","react-router-dom":"9xmpe","./Menu":"dzl1W","./Face":"djofN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dzl1W":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$53e6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34079,70 +34079,67 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 const Menu = ({ name, image, description, price })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "menu-item",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "main_div",
+                className: "text-section",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "text_section",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: name.toUpperCase()
+                    }, void 0, false, {
+                        fileName: "Components/Menu.jsx",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                children: name.toUpperCase()
-                            }, void 0, false, {
-                                fileName: "Components/Menu.jsx",
-                                lineNumber: 6,
-                                columnNumber: 1
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: price / 100
-                            }, void 0, false, {
-                                fileName: "Components/Menu.jsx",
-                                lineNumber: 7,
-                                columnNumber: 1
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: description
-                            }, void 0, false, {
-                                fileName: "Components/Menu.jsx",
-                                lineNumber: 8,
-                                columnNumber: 1
-                            }, undefined)
+                            "$",
+                            (price / 100).toFixed(2)
                         ]
                     }, void 0, true, {
                         fileName: "Components/Menu.jsx",
-                        lineNumber: 5,
-                        columnNumber: 3
+                        lineNumber: 8,
+                        columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "image_section",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "image_size",
-                            src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/" + image
-                        }, void 0, false, {
-                            fileName: "Components/Menu.jsx",
-                            lineNumber: 11,
-                            columnNumber: 5
-                        }, undefined)
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: description
                     }, void 0, false, {
                         fileName: "Components/Menu.jsx",
-                        lineNumber: 10,
-                        columnNumber: 3
+                        lineNumber: 9,
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "Components/Menu.jsx",
-                lineNumber: 4,
-                columnNumber: 1
+                lineNumber: 6,
+                columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "image-section",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "image-size",
+                    src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/" + image,
+                    alt: name
+                }, void 0, false, {
+                    fileName: "Components/Menu.jsx",
+                    lineNumber: 12,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
                 fileName: "Components/Menu.jsx",
-                lineNumber: 14,
-                columnNumber: 1
+                lineNumber: 11,
+                columnNumber: 7
             }, undefined)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "Components/Menu.jsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
 };
 _c = Menu;
 exports.default = Menu;
@@ -34154,7 +34151,7 @@ $RefreshReg$(_c, "Menu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"djofN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"djofN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$994d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
