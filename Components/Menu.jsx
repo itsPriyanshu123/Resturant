@@ -4,9 +4,9 @@ const Menu = ({ name, image, description, price }) => {
   return (
     <div className="menu-item">
       <div className="text-section">
-        <h2>{name.toUpperCase()}</h2>
-        <p>${(price / 100).toFixed(2)}</p>
-        <p>{description}</p>
+        <h4>{name.toUpperCase()}</h4>
+        <p  style={{paddingTop:'10px'}}>₹{(price / 100).toFixed(2)}</p>
+        <p  style={{paddingTop:'20px'}}>{description}</p>
       </div>
       <div className="image-section">
         <img

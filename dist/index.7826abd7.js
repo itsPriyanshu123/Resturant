@@ -33634,6 +33634,7 @@ const RestaurantCard = ({ cloudinaryImageId, name, cuisines, areaName, sla, cost
         className: "card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "card_image",
                 src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" + cloudinaryImageId
             }, void 0, false, {
                 fileName: "Components/RestaurantCard.js",
@@ -33641,6 +33642,9 @@ const RestaurantCard = ({ cloudinaryImageId, name, cuisines, areaName, sla, cost
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                style: {
+                    paddingTop: "5px"
+                },
                 children: name
             }, void 0, false, {
                 fileName: "Components/RestaurantCard.js",
@@ -33648,6 +33652,9 @@ const RestaurantCard = ({ cloudinaryImageId, name, cuisines, areaName, sla, cost
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                style: {
+                    paddingTop: "10px"
+                },
                 children: cuisines.join(", ")
             }, void 0, false, {
                 fileName: "Components/RestaurantCard.js",
@@ -33655,7 +33662,16 @@ const RestaurantCard = ({ cloudinaryImageId, name, cuisines, areaName, sla, cost
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                children: areaName
+                style: {
+                    paddingTop: "10px"
+                },
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                    children: areaName
+                }, void 0, false, {
+                    fileName: "Components/RestaurantCard.js",
+                    lineNumber: 18,
+                    columnNumber: 39
+                }, undefined)
             }, void 0, false, {
                 fileName: "Components/RestaurantCard.js",
                 lineNumber: 18,
@@ -34184,7 +34200,7 @@ const Restaurant = ()=>{
     }, undefined);
     const { name, locality, costForTwoMessage, cuisines, avgRatingString, sla, cloudinaryImageId } = resInfo?.cards[0]?.card?.card?.info;
     const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-    // console.log("info",itemCards);
+    console.log("info", itemCards);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "list_div",
         children: [
@@ -34198,7 +34214,7 @@ const Restaurant = ()=>{
                 cloudinaryImageId: cloudinaryImageId
             }, void 0, false, {
                 fileName: "Components/Restaurant.js",
-                lineNumber: 39,
+                lineNumber: 41,
                 columnNumber: 7
             }, undefined),
             itemCards.map((item)=>{
@@ -34209,14 +34225,14 @@ const Restaurant = ()=>{
                     price: item.card.info.price
                 }, item.card.info.id, false, {
                     fileName: "Components/Restaurant.js",
-                    lineNumber: 44,
+                    lineNumber: 46,
                     columnNumber: 11
                 }, undefined);
             })
         ]
     }, void 0, true, {
         fileName: "Components/Restaurant.js",
-        lineNumber: 38,
+        lineNumber: 40,
         columnNumber: 5
     }, undefined);
 };
@@ -34254,7 +34270,7 @@ const Menu = ({ name, image, description, price })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "text-section",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                         children: name.toUpperCase()
                     }, void 0, false, {
                         fileName: "Components/Menu.jsx",
@@ -34262,8 +34278,11 @@ const Menu = ({ name, image, description, price })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        style: {
+                            paddingTop: "10px"
+                        },
                         children: [
-                            "$",
+                            "₹",
                             (price / 100).toFixed(2)
                         ]
                     }, void 0, true, {
@@ -34272,6 +34291,9 @@ const Menu = ({ name, image, description, price })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        style: {
+                            paddingTop: "20px"
+                        },
                         children: description
                     }, void 0, false, {
                         fileName: "Components/Menu.jsx",
@@ -34386,11 +34408,15 @@ const Face = ({ name, locality, costForTwoMessage, avgRatingString, cuisines, sl
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "rating_stuff   ",
+                            className: "rating_stuff",
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                                     style: avgRatingString < 4 ? {
-                                        backgroundColor: "var(--light-red)"
+                                        backgroundColor: "var(--light-red)",
+                                        paddingRight: "10px",
+                                        alignItems: "center",
+                                        marginRight: "10px",
+                                        paddingLeft: "10px"
                                     } : avgRatingString === "--" ? {
                                         backgroundColor: "white",
                                         color: "black"
@@ -34398,7 +34424,10 @@ const Face = ({ name, locality, costForTwoMessage, avgRatingString, cuisines, sl
                                         color: "white",
                                         backgroundColor: "green",
                                         borderRadius: "2px",
-                                        alignItems: "center"
+                                        alignItems: "center",
+                                        paddingRight: "10px",
+                                        marginRight: "10px",
+                                        paddingLeft: "10px"
                                     },
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
@@ -34406,31 +34435,41 @@ const Face = ({ name, locality, costForTwoMessage, avgRatingString, cuisines, sl
                                             children: "⭐"
                                         }, void 0, false, {
                                             fileName: "Components/Face.jsx",
-                                            lineNumber: 44,
+                                            lineNumber: 50,
                                             columnNumber: 15
                                         }, undefined),
                                         avgRatingString
                                     ]
                                 }, void 0, true, {
                                     fileName: "Components/Face.jsx",
-                                    lineNumber: 35,
+                                    lineNumber: 31,
                                     columnNumber: 13
                                 }, undefined),
+                                "|",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     style: {
-                                        color: "white"
+                                        color: "white",
+                                        marginRight: "10px",
+                                        paddingLeft: "10px"
                                     },
                                     children: costForTwoMessage
                                 }, void 0, false, {
                                     fileName: "Components/Face.jsx",
-                                    lineNumber: 47,
+                                    lineNumber: 54,
                                     columnNumber: 13
                                 }, undefined),
+                                "|",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: sla
-                                }, void 0, false, {
+                                    style: {
+                                        paddingLeft: "10px"
+                                    },
+                                    children: [
+                                        sla,
+                                        " mins"
+                                    ]
+                                }, void 0, true, {
                                     fileName: "Components/Face.jsx",
-                                    lineNumber: 48,
+                                    lineNumber: 55,
                                     columnNumber: 13
                                 }, undefined)
                             ]

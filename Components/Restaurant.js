@@ -33,7 +33,9 @@ const Restaurant = () => {
 
   const { name, locality, costForTwoMessage, cuisines,avgRatingString,sla,cloudinaryImageId  } = resInfo?.cards[0]?.card?.card?.info;
   const{itemCards}=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  // console.log("info",itemCards);
+
+  
+  console.log("info",itemCards);
   return (
     <div className="list_div">
       <Face name={name} locality={locality} costForTwoMessage={costForTwoMessage} cuisines={cuisines} avgRatingString={avgRatingString} sla={sla.minDeliveryTime} cloudinaryImageId={cloudinaryImageId}/>
