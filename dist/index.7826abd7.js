@@ -33836,24 +33836,87 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$a401.prelude(module);
 
 try {
+// import food from "../Images/burger-image.png";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const About = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        style: {
-            marginTop: "90px"
-        },
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "About us page"
-        }, void 0, false, {
-            fileName: "Components/About.js",
-            lineNumber: 4,
-            columnNumber: 5
-        }, undefined)
-    }, void 0, false, {
+        className: "about-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "about-left",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: [
+                            "Welcome to ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "Components/About.js",
+                                lineNumber: 8,
+                                columnNumber: 22
+                            }, undefined),
+                            " The world of ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "Components/About.js",
+                                lineNumber: 8,
+                                columnNumber: 42
+                            }, undefined),
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Tasty & Fresh Food"
+                            }, void 0, false, {
+                                fileName: "Components/About.js",
+                                lineNumber: 8,
+                                columnNumber: 49
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "Components/About.js",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                        children: [
+                            '"Better you will feel if you eat a Food',
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Fire"
+                            }, void 0, false, {
+                                fileName: "Components/About.js",
+                                lineNumber: 11,
+                                columnNumber: 50
+                            }, undefined),
+                            ' healthy meal"'
+                        ]
+                    }, void 0, true, {
+                        fileName: "Components/About.js",
+                        lineNumber: 10,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "Components/About.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "about-right",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: "https://foodfire-app.netlify.app/burger-image.ec55d069.png",
+                    alt: "Food Image"
+                }, void 0, false, {
+                    fileName: "Components/About.js",
+                    lineNumber: 15,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "Components/About.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "Components/About.js",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 5
     }, undefined);
 };
@@ -33877,31 +33940,114 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+// import contact from "../Images/Contact-Us.png";
 const Contact = ()=>{
+    _s();
+    const [message, setMessage] = (0, _react.useState)(false);
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        setMessage(true);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "contact-container",
         style: {
             marginTop: "80px"
         },
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Contact us Page"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "contact-left",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: "https://foodfire-app.netlify.app/Contact-Us.13c5d28a.png",
+                    alt: ""
+                }, void 0, false, {
+                    fileName: "Components/Contact.js",
+                    lineNumber: 13,
+                    columnNumber: 7
+                }, undefined)
             }, void 0, false, {
                 fileName: "Components/Contact.js",
-                lineNumber: 4,
-                columnNumber: 9
+                lineNumber: 12,
+                columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "contact-right",
+                style: {
+                    marginTop: "80px"
+                },
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "Contact us"
+                    }, void 0, false, {
+                        fileName: "Components/Contact.js",
+                        lineNumber: 16,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                        onSubmit: handleSubmit,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                placeholder: "Name",
+                                required: true
+                            }, void 0, false, {
+                                fileName: "Components/Contact.js",
+                                lineNumber: 18,
+                                columnNumber: 17
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "email",
+                                placeholder: "Email",
+                                required: true
+                            }, void 0, false, {
+                                fileName: "Components/Contact.js",
+                                lineNumber: 19,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                                placeholder: "Type your Message here...",
+                                required: true
+                            }, void 0, false, {
+                                fileName: "Components/Contact.js",
+                                lineNumber: 20,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                type: "submit",
+                                children: "Submit"
+                            }, void 0, false, {
+                                fileName: "Components/Contact.js",
+                                lineNumber: 21,
+                                columnNumber: 21
+                            }, undefined),
+                            message && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: "Thanks for contacting FoodFire, We will reply ASAP."
+                            }, void 0, false, {
+                                fileName: "Components/Contact.js",
+                                lineNumber: 22,
+                                columnNumber: 33
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "Components/Contact.js",
+                        lineNumber: 17,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "Components/Contact.js",
-                lineNumber: 5,
-                columnNumber: 8
+                lineNumber: 15,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "Components/Contact.js",
-        lineNumber: 3,
+        lineNumber: 11,
         columnNumber: 5
     }, undefined);
 };
+_s(Contact, "n0fnK4ZqApEScFgFl1/p++eCWeA=");
 _c = Contact;
 exports.default = Contact;
 var _c;
@@ -33912,7 +34058,7 @@ $RefreshReg$(_c, "Contact");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kOU9n":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"kOU9n":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a328 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -33922,36 +34068,56 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
+var _reactRouterDom = require("react-router-dom"); // import useRouteError for routing error
 var _s = $RefreshSig$();
 const Error = ()=>{
     _s();
-    const error = (0, _reactRouterDom.useRouteError)();
-    console.error(error);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    // call useRouteError so we can access error data while routing
+    const err = (0, _reactRouterDom.useRouteError)();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "error-page",
+        style: {
+            marginTop: "80px"
+        },
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Opps something went Wrong!!!!"
+                children: "Oops! The restaurant you're looking for can't be found."
             }, void 0, false, {
                 fileName: "Components/Error.js",
-                lineNumber: 7,
-                columnNumber: 5
+                lineNumber: 10,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    error.status,
-                    ":",
-                    error.statusText
-                ]
-            }, void 0, true, {
+                className: "error-data",
+                children: err.data
+            }, void 0, false, {
                 fileName: "Components/Error.js",
-                lineNumber: 8,
-                columnNumber: 5
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "error-back-home",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: "/",
+                    children: "Back Home"
+                }, void 0, false, {
+                    fileName: "Components/Error.js",
+                    lineNumber: 13,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "Components/Error.js",
+                lineNumber: 12,
+                columnNumber: 7
             }, undefined)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "Components/Error.js",
+        lineNumber: 8,
+        columnNumber: 5
+    }, undefined);
 };
-_s(Error, "oAgjgbJzsRXlB89+MoVumxMQqKM=", false, function() {
+_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
     return [
         (0, _reactRouterDom.useRouteError)
     ];
