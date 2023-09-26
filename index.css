@@ -1,6 +1,10 @@
 /* Font family */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Select all CSS Start*/
 * {
   margin: 0;
@@ -735,6 +739,7 @@ margin-top: 10px;
     height: auto;
     width: 80%;
   }
+
 }
 
 @media only screen and (max-width: 650px) {

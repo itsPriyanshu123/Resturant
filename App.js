@@ -1,14 +1,15 @@
 
-import Header from "./Components/Header";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Body from "./Components/Body";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
-import Error from "./Components/Error";
-import Restaurant from "./Components/Restaurant";
+import Header from './src/Components/Header';
+import Body from './src/Components/Body';
+import Restaurant from './src/Components/Restaurant';
+import About from './src/Components/About';
+import Contact from './src/Components/Contact';
+import Error from './src/Components/Error';
+import About from './src/Components/About';
 /* My Food App structure will look like this, 
             1) Header
                 - Logo

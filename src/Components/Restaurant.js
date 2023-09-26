@@ -48,7 +48,7 @@ const Restaurant = () => {
         })
       }
      
-    </div>
+    </div>  
   );
 
   
